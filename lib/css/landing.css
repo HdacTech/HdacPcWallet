@@ -1,0 +1,125 @@
+body {
+    background:rgba(0,0,0, .15);
+}
+
+#logo {
+    position: absolute;
+    top: 23px;
+    left: 24px;
+}
+
+.highlight {
+    color: #ff0000;
+}
+
+/*landing*/
+#landing .container{padding:0 15px;text-align:center;}
+
+#create-wallet-container {
+    width: 100%;
+    position: fixed;
+    left: 37%;
+    top: 40%;
+}
+
+#select-coin-container {
+    width: 100%;
+    position: fixed;
+    left: 37%;
+    top: 40%;
+}
+
+.btn-create {
+    width: 280px;
+    background: #0090d0;
+    color: #FFFFFF;
+    padding: 15px 0;
+    font:normal 17px 'NanumSquare';
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-restore {
+    width: 280px;
+    background: #001034;
+    color: #0090d0;
+    padding: 15px 0;
+    text-align: center;
+    font:normal 17px 'NanumSquare';
+    cursor: pointer;
+}
+
+#btn-hdac {
+    width: 280px;
+    height: 80px;
+    background: #0090d0;
+    padding: 15px 0;
+    font:normal 17px 'NanumSquare';
+    text-align: center;
+    cursor: pointer;
+}
+
+.custom-checkbox{
+    width: 15px;
+    height: 15px;
+    margin-right: 17px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    top: 3px;
+    /*background-color: #ccc;*/
+    background: url('../../image/img_check_off.png') no-repeat;
+}
+
+.custom-checkbox.selected{
+    background: url('../../image/img_check_on.png') no-repeat;
+}
+
+.custom-checkbox input[type="checkbox"]{
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    /* CSS hacks for older browsers */
+    _noFocusLine: expression(this.hideFocus=true);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+}
+
+.backup-phrase-container {
+    margin-top: 15%;
+    border: 1px solid #002460;
+    border-radius: 15px;
+    padding: 12px;
+    font: 14px 'NanumSquare';
+    line-height: 1.6em;
+    color: #002460;
+}
+
+#backup-phrase-textArea {
+    width:100%;
+    /*margin-right: 15px;*/
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    color: #0090d0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+#landing .loading{width:119px;height:5px;margin-top: 30px;}
+
+.hdac{background: url('../../image/img_inactive_hdac.png') no-repeat center center;}
+
+#landing footer{width: 100%; position: absolute; bottom: 25px; font:normal 13px 'NanumSquare';color:#797979; text-align: center}
+#landing footer .require{text-align:center;}
+

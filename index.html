@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="lib/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/css/reset.css">
+	<link rel="stylesheet" href="lib/css/common.css">
+	<link rel="stylesheet" href="lib/css/style.css">
+	<link rel="stylesheet" href="lib/css/dialog.css">
+	<link rel="stylesheet" href="lib/css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<script type="text/javascript" src="lib/js/third/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="lib/js/constants.js"></script>
+	<script type="text/javascript" src="lib/js/utils/commonUtils.js"></script>
+	<script type="text/javascript" src ="lib/js/ui/index.js"></script>
+	<script type="text/javascript" src="lib/js/third/bootstrap.js"></script>
+	<script type="text/javascript" src="lib/js/third/i18nextXHRBackend.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/jquery-i18next.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/i8next.min.js"></script>
+
+	<style>
+		body {
+			background-image: url('image/bg_index.jpg');
+		}
+	</style>
+</head>
+<body class="index">
+<div id="introWrap">
+	<div>
+		<div><img src="image/img_logo.png" alt="HDAC Wallet" class="bi"></div>
+	</div>
+</div>
+
+<footer>
+	<div style="color:#848484; position: absolute; bottom: 20px; text-align: center;width: 100%; font-size: 14px">
+		&#169;2018 Hdac Technology AG.All Rights Reserved
+	</div>
+</footer>
+
+<!-- modal -->
+<div class="modal fade" id="alertDialog" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body modal-alert-body">
+				<p id="lblAlert"></p>
+			</div>
+			<div class="modal-footer">
+				<div id="btnConfirmOK" class="btn-modal-confirm" data-i18n="modal.confirm"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="updateConfirmDialog" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body modal-alert-body">
+				<p id="lblUpdateMsg"></p>
+			</div>
+			<div class="modal-footer">
+				<div id="btnUpdate" class="btn-modal-confirm" data-i18n="modal.update"></div>
+				<div id="btnLater" class="btn_close_popup" data-i18n="modal.later"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+    var lng;
+    if (navigator.language === 'ko' || navigator.language === 'ko-KR') {
+        lng = 'ko';
+    }
+    else {
+        lng = 'en';
+    }
+
+    i18next
+        .use(i18nextXHRBackend)
+        .init({
+            lng: lng,
+            backend: {
+                loadPath: '/locales/{{lng}}/{{ns}}.json',
+                crossDomain: false
+            }
+        }, function(err, t) {
+            jqueryI18next.init(i18next, $);
+            $('.index').localize();
+        });
+</script>
+</html>

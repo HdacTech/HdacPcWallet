@@ -1,0 +1,305 @@
+.modal-close{width:20px; position:absolute; right:15px; top:15px;}
+
+.modal-cancel{
+    width:45%; margin-right: 4%;
+    font:normal 20px/20px 'Naunum Gothic';padding:12px 0;border:1px solid #797979;color:#797979;margin-right:1%;cursor:pointer;border-radius: 25px;
+}
+
+.modal-ok{
+    width:49%;
+    font:normal 20px/20px 'Naunum Gothic';padding:15px 0;background:#797979;color:#fff;border:0;cursor:pointer;border-radius: 25px;
+}
+
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+
+.modal-header {
+    height: 40px;
+    padding: 10px 15px;
+    border-bottom: none;
+    background-color: #ececec;
+    color: #797979;
+    font: 15px "NanumSquare";
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-content {
+    /*height: 340px;*/
+    text-align: center;
+    font-size: 20px;
+    font-family: "NanumSquare";
+    border-radius: 15px;
+    /*position:relative;*/
+}
+
+.modal-setting-body {
+    height: 250px;
+}
+
+.modal-confirm-body {
+    height: 150px;
+    text-align: center;
+}
+
+.modal-create-wallet-body {
+    height: 250px;
+}
+
+.modal-create-wallet-body {
+    text-align: start;
+}
+
+.modal-alert-body {
+    padding-top: 40px;
+}
+
+.modal-update-software-body {
+    height: 200px;
+    text-align: center;
+}
+
+.modal-confirm-body p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-body {
+    color: #3f3f3f;
+    font: 13px "NanumSquare";
+    font-weight: bold;
+}
+
+.modal-footer {
+    border-top: none;
+    text-align: center;
+}
+
+.modal-dialog {
+    width: 504px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal-prev {
+    position:absolute; left:18px; top:13px;
+    cursor: pointer;
+    content: url('../../image/btn_popup_prev.png');
+}
+
+.modal-prev:hover {
+    content: url('../../image/btn_popup_prev_on.png');
+}
+
+.add_favorite {
+    position:absolute; right:15px; top:12px;
+    cursor: pointer;
+}
+
+.add_favorite:hover {
+    content: url('../../image/ic_add_favorite_on.png');
+}
+
+.select_favorite, .edit_favorite, .delete_favorite {
+    cursor: pointer;
+}
+
+.menu-container {
+    border-width: 1px 0;
+    border-color: #ebebeb;
+    border-style: solid;
+}
+
+.menu-item {
+     width: 100%;
+     padding: 10px 15px;
+     font: 13px "NanumSquare";
+     font-weight: bold;
+     color: #797979;
+     display: table;
+     cursor: pointer;
+ }
+
+.menu_label {
+    display: table-cell;
+    float:left
+}
+
+.ic_menu_next {
+    width: 8px;
+    height: 20px;
+    display: table-cell;
+    float:right;
+    background: url('../../image/ic_modal_menu_next.png') no-repeat center;
+}
+
+.menu-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ebebeb;
+}
+
+.btn_add_favorite, .btn_edit_favorite {
+    width: 74px;
+    height: 27px;
+    padding-top: 5px;
+    text-align: center;
+    float:right;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px solid #797979;
+    font: 13px "NanumGothic";
+    color: #797979;
+    margin-right: 8px;
+}
+
+.btn_close_popup {
+    width: 74px;
+    height: 27px;
+    padding-top: 5px;
+    text-align: center;
+    float:right;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #797979;
+    font: 13px "NanumGothic";
+    color: #FFFFFF;
+}
+
+.btn-modal-confirm {
+    width: 74px;
+    height: 27px;
+    padding-top: 5px;
+    text-align: center;
+    float:right;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #092d74;
+    font: 13px "NanumGothic";
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.btn-modal-understand {
+    width: 154px;
+    height: 27px;
+    padding-top: 5px;
+    text-align: center;
+    float:right;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #092d74;
+    font: 13px "NanumGothic";
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.disable {
+    background-color: #797979;
+}
+
+.modal-body label {
+    color: #797979;
+    font: 13px "NanumSquare";
+    font-weight: bold;
+}
+
+.coin_setting_cell {
+    width: 100px;
+    text-align: left;
+}
+
+.favorite_item_btn_group {
+    vertical-align: middle;
+}
+
+.favorite_item_btn_group a{
+    vertical-align: middle;
+    color: #797979;
+    text-decoration: none;
+}
+
+.favorite_item_btn_group img{
+    margin-top: 7px;
+}
+
+.favorite_form {
+    text-align: left;
+}
+
+.favorite_form p{
+    color: #565656;
+    font: 12px "NanumSquare";
+}
+
+.favorite_form input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.empty_favorite {
+    width: 100%;
+    margin-top: 100px;
+    /*position: relative;
+    top: 50%;
+    transform: translateY(-50%);*/
+    display: none;
+    padding: 0 15px;
+    text-align: left;
+}
+
+.detail_label {
+    width: 82px;
+    background-color: #ececec;
+    text-align: left;
+    padding-left: 22px;
+    vertical-align: middle;
+}
+
+.detail_content {
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.detail_row {
+    height: 39px;
+    table-layout: fixed;
+}
+
+#detail-txId {
+    width: 392px;
+    /*overflow: hidden;*/
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+
+#link-coin-explorer {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background: url('../../image/coin_explorer_on.png') no-repeat center;
+    cursor: pointer;
+}
+
+.update-menu-item {
+    width: 100%;
+    padding: 10px 15px;
+    font: 13px "NanumSquare";
+    font-weight: bold;
+    display: table;
+    cursor: pointer;
+}

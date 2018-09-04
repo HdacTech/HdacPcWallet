@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="lib/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/css/reset.css">
+	<link rel="stylesheet" href="lib/css/common.css">
+	<link rel="stylesheet" href="lib/css/style.css">
+	<link rel="stylesheet" href="lib/css/loading.css">
+	<link rel="stylesheet" href="lib/css/dialog.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<script type="text/javascript" src="lib/js/third/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="lib/js/constants.js"></script>
+	<script type="text/javascript" src="lib/js/utils/pathUtils.js"></script>
+	<script type="text/javascript" src="lib/js/third/bootstrap.js"></script>
+	<script type="text/javascript" src="lib/js/third/bitcoinjs.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/jquery-i18next.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/i18nextXHRBackend.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/i8next.min.js"></script>
+	<script type="text/javascript" src="lib/js/wallet/wallet-loader.js"></script>
+	<script type="text/javascript" src="lib/js/ui/loading.js"></script>
+</head>
+<body class="landing-2">
+	<div id="landing2">
+		<div class="coinLogo"></div>
+		<div class="txtLoading" data-i18n="loading.msg_sync"></div>
+	</div>
+        <div class="modal fade" id="alertDialog" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body  modal-confirm-body">
+                        <p id="lblAlert"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <div type="button" id="btnConfirmOK" class="btn-modal-confirm" data-i18n="modal.confirm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        var lng;
+        if (navigator.language === 'ko' || navigator.language === 'ko-KR') {
+            lng = 'ko';
+        }
+        else {
+            lng = 'en';
+        }
+
+        i18next
+            .use(i18nextXHRBackend)
+            .init({
+                lng: lng,
+                backend: {
+                    loadPath: '/locales/{{lng}}/{{ns}}.json',
+                    crossDomain: false
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $);
+                $('.landing-2').localize();
+            });
+    });
+</script>
+
+</html>

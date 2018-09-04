@@ -1,0 +1,126 @@
+{
+  "create_phrase": {
+    "msg": "These are 12-backup phrase",
+    "confirmBtn": "I've written it down."
+  },
+
+  "input_backup_phrase": {
+    "msg": "Confirm Your 12-word Backup Phrase",
+    "placeholder": "Enter Backup Phrase",
+    "confirmBtn" : "Confirm"
+  },
+
+  "landing" : {
+    "caption_create_wallet": "Create Wallet",
+    "caption_restore_wallet": "Restore Wallet",
+    "caption_next": "Next",
+    "caption_confirm": "Confirm",
+    "caption_record": "I recorded it.",
+    "lbl_create_wallet": "Create Wallet",
+    "lbl_reset_wallet": "Reset",
+    "msg_phrase": "Check Backup Phrases as below.",
+    "msg_input_backup_phrase": "Enter Your 12-word Backup Phrase.",
+    "placeholder_input_backup_phrase": "Enter Backup Phrase.",
+
+    "msg_create_wallet_notice_0": "On the following screen, you will see a set of 12 random words, This is your wallet's Backup Phrase. You can use this to restore your wallet. We don't save any data to restore on our server.",
+    "msg_create_wallet_notice_1": "Be sure to store your Backup Phrase in a secure place. If you do not record or lose your recovery words, you will not be able to recover your Hdac wallet and your funds when you delete the app or initialize data.",
+    "msg_create_wallet_notice_2": "Select the check box and press the Ok to confirm the Backup Phrase.",
+    "msg_understand": "I Understand"
+  },
+
+  "loading": {
+    "msg_sync" : "Synchronizing your wallet now. It might take a few minutes.",
+    "msg_loading_fail": "Loading failed."
+  },
+
+  "main": {
+    "lbl_send": "Send",
+    "lbl_receive": "Receive",
+    "lbl_address": "Address",
+    "lbl_name": "Name",
+
+    "lbl_tx_history": "Transaction History",
+    "no_tx": "No Transactions",
+
+    "lbl_request": "Request",
+
+    "lbl_amount": "Amount",
+    "lbl_receive_address": "Address",
+    "caption_max": "MAX",
+
+    "tx_total_amount": "Total Amount",
+    "send_address": "Address",
+    "send_amount": "Amount",
+    "tx_fee": "Transaction fee",
+    "address_placeholder": "Enter address",
+    "fee_custom": "Custom",
+    "fee_high_hdac": "High 0.1",
+    "fee_middle_hdac": "Middle 0.03",
+    "fee_low_hdac": "Low 0.01",
+    "caption_send": "Send",
+    "lbl_total_amount": "Total amount",
+
+    "low_fee_alert": "*Low fee amount might cause transfer delay.",
+    "invalid_fee": "*The fee is not appropriate.",
+    "check_fee": "Check fee.",
+
+    "setting_security": "Security",
+    "setting_pincode": "PIN Code Lock",
+    "lock_by_pincode": "PIN Code Lock",
+    "change_pincode": "Change PIN Code",
+
+    "msg_timeout": "No server response. Move to initial page.",
+    "msg_tx_fail": "Fail to send. Please retry again.",
+    "msg_tx_complete": "Transfer is completed.",
+    "msg_tx_fail_insufficient_fee": "Fail to send. Please check transaction fee.",
+
+    "msg_input_address": "Please Enter the address.",
+    "msg_input_amount": "Please Enter the transfer amount.",
+    "msg_tx_amount_over_balance": "The transfer value is more than your balance.",
+    "msg_input_fee": "Please Enter the fee.",
+    "msg_fee_is_too_low": "Invalid Fee value.",
+
+    "lbl_setting": "Settings",
+    "lbl_setting_currency": "Currency",
+    "lbl_setting_crypto_currency": "Coin",
+    "lbl_setting_favorite": "Favorite address",
+    "lbl_setting_reset": "Reset",
+
+    "lbl_transaction_detail": "Transaction Detail",
+    "lbl_transaction_detail_amount": "Amount",
+    "lbl_transaction_detail_fee": "Fee",
+    "lbl_transaction_detail_time": "Time",
+    "lbl_transaction_detail_txID": "TxID",
+
+    "msg_enter_email": "Enter Email and press confirm.",
+    "placeholder_enter_email": "Enter Email",
+
+    "msg_saved": "Saved.",
+    "msg_duplicated_address": "Duplicated address",
+    "msg_send_confirm": "Do you want to send? You cannot cancel transaction after it is sent.",
+
+    "lbl_confirm_complete": "Confirmed",
+    "lbl_confirm_on_process": "Confirm",
+
+    "msg_invalid_address": "Invalid address.",
+    "msg_enter_tx_amount": "Please Enter transaction amount",
+    "msg_copyToClipboard": "Copy To Clipboard",
+
+    "msg_on_transfer": "Processing transfer",
+    "msg_transfer_complete": "Transfer complete",
+
+    "msg_reset_wallet1": "Did you record the Backup Phrases?",
+    "msg_reset_wallet2": "Without Backup Phrases, Wallet recovery is not possible after initialization. Please make sure you have recorded the Backup Phrases again.",
+    "msg_reset_wallet3": "Do you really want to reset your wallet?",
+    "msg_understand": "Yes, I want to reset my wallet."
+  },
+
+  "modal": {
+    "confirm": "Confirm",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "update": "Update",
+    "later": "Later"
+  }
+}

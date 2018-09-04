@@ -1,0 +1,54 @@
+select{display: none;}
+
+@media screen and (max-width: 460px){
+	#config_wallet dt{font:normal 15px/15px "Nanum Gothic"}
+	#config_wallet dd{font:normal 15px/15px "Nanum Gothic"}
+	#config_wallet .checkbox dd label{font-size:15px;}
+}
+
+@media screen and (max-width: 460px){
+	#send_coin .pop_body .quan .right{width:160px;}
+	#send_coin .pop_body dt{font:normal 15px/15px "Nanum Gothic";}
+	#send_coin .pop_body .quan button[type="button"]{font-size: 10px;}
+	#send_coin .pop_body .quan .btc{font:normal 20px/20px 'Noto Sans';}
+	#send_coin .pop_body .account li{font:normal 14px/15px 'Noto Sans';}
+	#send_coin .pop_body .account li a{font:normal 14px/15px 'Noto Sans';}
+	#send_coin .pop_body input[type="text"]{font-size:14px;}
+	#send_coin .pop_body .fee li{font:normal 14px/15px 'Nanum Gothic';}
+	#send_coin .pop_body .fee li a{font:normal 14px/15px 'Nanum Gothic';}
+	#send_coin .pop_body .maxquan .btc{font:normal 17px/17px 'Noto Sans';}
+	#send_coin .pop_body .maxquan{font:normal 14px/14px 'Nanum Gothic'}
+}
+
+@media screen and (max-width: 400px){
+	#send_coin .pop_body dl{padding:16px 0;}
+	#send_coin .pop_body .quan .right{width:130px;}
+	#send_coin .pop_body .quan input[type="text"]{width:61%;}
+}
+
+@media screen and (max-width: 460px){
+	#receive_coin .pop_body dt{font:normal 15px/15px "Nanum Gothic";}
+	#receive_coin .pop_body .quan button[type="button"]{font-size: 10px;}
+	#receive_coin .pop_body .quan .btc{font:normal 20px/20px 'Noto Sans';}
+	#receive_coin .pop_body .account li{font:normal 14px/15px 'Noto Sans';}
+	#receive_coin .pop_body .account li a{font:normal 14px/15px 'Noto Sans';}
+	#receive_coin .pop_body input[type="text"]{font-size:14px;}
+	#receive_coin .pop_body .fee li a{font:normal 14px/15px 'Nanum Gothic';}
+	#receive_coin .pop_body .maxquan .btc{font:normal 17px/17px 'Noto Sans';}
+	#receive_coin .pop_body .maxquan{font:normal 14px/14px 'Nanum Gothic'}
+}
+
+/*QR code pop-up*/
+.popupWrap{margin-top:15px;}
+.alert{width:90%;margin:0 auto;text-align:center;padding:0 15px 38px;box-sizing: border-box;position:relative;background:#fff;}
+.alert p{font:normal 21px/35px 'Nanum Gothic';padding:77px 0 64px 0;}
+.alert .btn button[type="button"]{width:49%;border:none;}
+.alert .btn button[type="button"].cancel{font:normal 20px/20px 'Naunum Gothic';padding:12px 0;border:1px solid #012368;margin-right:1%;cursor:pointer;border-radius: 5px;}
+.alert .btn button[type="button"].confirm{font:normal 20px/20px 'Naunum Gothic';padding:12px 0;background:#1e376d;color:#fff;border:1px solid #012368;cursor:pointer;border-radius: 5px;}
+.alert img{width:20px;position: absolute;right:15px;top:15px;}
+
+@media screen and (max-width: 460px){
+	#account_add .pop_body dt{font:normal 15px/15px "Nanum Gothic";}
+	#account_add .pop_body input[type="text"]{font-size:14px;}
+	#account_add .pop_body p{width:70%;margin:0 0 257px 0;padding:4px 0 3px 25px;color:#ff1800;font:normal 13px/13px "Nanum Gothic";background: url(../../image/ico_error.png) no-repeat left center;background-size:20px;box-sizing: border-box;float:right;}
+}

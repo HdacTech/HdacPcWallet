@@ -1,0 +1,15 @@
+
+@charset "utf-8";
+
+body,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,p {margin:0;padding:0;font-weight: normal;}
+body{font-family:'Noto Sans','나눔고딕','Nanum Gothic',Arial;font-size:11px;color:#333;-webkit-text-size-adjust:none;}
+ul{list-style:none;}
+a{text-decoration:none;color:#333;-webkit-tap-highlight-color:transparent;}
+img{border:0;vertical-align:top;}
+table{border-collapse:collapse;width:100%;}
+caption{font-size:1px;width:1px;height:1px;overflow:hidden;margin-bottom:-1px;z-index:-1;}
+fieldset{border: 0;padding: 0.01em 0 0 0;margin: 0;min-width: 0;}
+legend{font-size:0;text-align: -9999px;}
+input[type="text"]{outline:none;}
+button {outline: 0;}
+

@@ -1,0 +1,33 @@
+body {
+    background:rgba(0,0,0, .15);
+}
+
+#landing2 .coinLogo {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-animation: rotateY 1.5s infinite linear;
+    animation: rotateY 1.5s infinite linear;
+    background: url(../../image/img_loading_hdac.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.txtLoading {
+    width: 100%;
+    color: #797979;
+    font: 14px "NanumSquare";
+    text-align: center;
+    position: absolute;
+    bottom: 200px
+}
+
+@-webkit-keyframes rotateY {
+    to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes rotateY {
+    to { transform: rotateY(360deg); }
+}

@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+/*landing2*/
+#landing2 .container{padding:0 15px;text-align:center;}
+#landing2 img.logo{width:120px;height:120px;margin-top:132px;margin-bottom:110px}
+#landing2 p{color:#797979;font:normal 20px/20px 'NanumGothic';}
+#landing2 .column {float: left;width:33.33%;height: 200px;text-align: center;}
+#landing2 .row {width: 700px;margin: 0 auto;}
+#landing2 .row:after {content: "";display: table;clear: both;}
+#landing2 footer{font:normal 18px/25px 'NanumGothic';color:#797979;/*padding-bottom:42px;*/}
+#landing2 footer .require{width:456px;margin:40px auto 0;padding:20px 0 39px;text-align:center;border-top:1px solid #c2c2c2;}
+#landing2 footer span{display:block;}
+#landing2 .loading{width:119px;height:5px;margin-top:15px;margin-bottom:40px;}
+
+/*header*/
+header h1{width:228px;margin:0 auto;text-transform: uppercase;padding-top: 27px;font-size:20px;line-height: 20px;}
+header h1 a{color:#fff;}
+header h1 .fontS27{font-size:27px;}
+
+.main_header {
+    height: 170px;
+    width: 100%;
+    color: #fff;
+    background-color: #002256;
+}
+
+.header-container{padding: 0px 20px}
+.transaction_info {padding: 30px}
+.transaction_info_sub { padding-bottom: 40px}
+
+header .config{width:32px;height:32px;padding:22px 0 0 0;float:right;}
+
+.main-btn-container{padding:0 15px;margin-top:30px;text-align: center}
+#id_send, #id_receive{background-color:transparent;color:#FFFFFF;width:45%;margin-right:3%;padding:16px 0;border:1px solid #FFFFFF;border-radius:25px;font:normal 20px/20px 'NanumGothic';cursor:pointer;}
+/*#id_receive{width:45%;padding:16px 0;color:#fff;border:1px solid;border-radius:25px;font:bold 20px/20px 'NanumGothic';cursor:pointer;}*/
+
+/*sideMenu*/
+.logOut{display:block;padding:0 18px 23px 10px;color:#012368;font:normal 18px/18px 'NanumGothic';border-bottom: 1px solid #012368;background: url(../../image/btn_logout.png) no-repeat right 10px top;background-size:7px;}
+.btnClose{float:right;width:20px;}
+
+.send{background:#ff1800;font:normal 20px/20px 'NanumGothic';color:#fff;display:inline-block;width:49%;margin-right:1%;text-align: center;padding:12px 0;margin-top:10px;border-radius:5px;}
+.receive{background:#1e376d;font:normal 20px/20px 'NanumGothic';color:#fff;display:inline-block;width:49%;margin-left:1%;text-align: center;padding:12px 0;margin-top:10px;border-radius:5px;}
+
+@media screen and (max-width: 400px){
+	#id_nowCoin{font-size:32px;}
+	nav a{font-size:17px;}
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

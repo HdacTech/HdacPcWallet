@@ -1,0 +1,126 @@
+{
+  "create_phrase" : {
+    "msg" : "12개의 복구 단어는 아래와 같습니다.",
+    "confirmBtn" : "기록했습니다."
+  },
+
+  "input_backup_phrase" : {
+    "msg": "12개의 복구 단어를 순서에 맞게 정확하게 입력하세요.",
+    "placeholder": "복구 단어를 입력하세요.",
+    "confirmBtn" : "확인"
+  },
+
+  "landing" : {
+    "caption_create_wallet": "지갑 생성",
+    "caption_restore_wallet": "지갑 복구",
+    "caption_next": "다음",
+    "caption_confirm": "확인",
+    "caption_record": "기록하였습니다",
+    "lbl_create_wallet": "지갑 생성",
+    "lbl_reset_wallet": "지갑 초기화",
+    "msg_phrase": "12개의 복구 단어는 아래와 같습니다.",
+    "msg_input_backup_phrase": "12개의 복구 단어를 순서에 맞게 정확하게 입력하세요.",
+    "placeholder_input_backup_phrase": "복구 단어를 입력하세요.",
+
+    "msg_create_wallet_notice_0": "지갑을 복구하기 위해서 다음 화면에 나오는 12개의 단어 세트가 필요합니다. 복구 단어를 반드시 기록하여 안전한 장소에 보관하시기 바랍니다. 복구를 위한 어떠한 데이터도 서버에서 관리하지 않습니다.",
+    "msg_create_wallet_notice_1": "만약 복구 단어를 기록하지 않거나 보관한 복구 단어를 잃어버리시면 앱을 삭제하거나 데이터 초기화시에 Hdac 지갑을 복구할 수 없고 자금도 영구적으로 찾을 수 없습니다.",
+    "msg_create_wallet_notice_2": "체크 박스 선택 후 확인 버튼을 누르면 복구 단어 확인을 위한 화면으로 이동합니다.",
+    "msg_understand": "위 내용을 이해하였습니다."
+  },
+
+  "loading": {
+    "msg_sync" : "지갑을 동기화 중입니다. 최대 몇분까지 소요될 수 있습니다.",
+    "msg_loading_fail": "지갑을 동기화하지 못했습니다."
+  },
+
+  "main": {
+    "lbl_send": "보내기",
+    "lbl_receive": "받기",
+    "lbl_address": "주소",
+    "lbl_name": "이름",
+
+    "lbl_tx_history": "최근 거래내역",
+    "no_tx": "최근 거래 내역이 없습니다.",
+
+    "lbl_request": "요청 수량",
+    "lbl_amount": "거래 수량",
+    "lbl_receive_address": "받을 주소",
+    "caption_max": "최대수량",
+
+    "tx_total_amount": "최종 전송 수량",
+    "send_address": "주소",
+    "send_amount": "보낼 수량",
+    "tx_fee": "전송 수수료",
+    "address_placeholder": "보낼 주소를 입력하세요.",
+    "fee_high_hdac": "상 0.1",
+    "fee_middle_hdac": "중 0.03",
+    "fee_low_hdac": "하 0.01",
+    "lbl_total_amount": "최종 전송수량",
+
+    "fee_custom": "직접 입력",
+    "caption_send": "보내기",
+
+    "low_fee_alert": "*수수료를 낮게 선택하면 코인이 늦게 보내질 수 있습니다.",
+    "invalid_fee": "*수수료가 적절하지 않습니다.",
+    "check_fee": "수수료를 확인해 주세요.",
+
+    "setting_security": "보안",
+    "setting_pincode": "잠금 설정",
+    "lock_by_pincode": "앱 잠금",
+    "change_pincode": "PIN Code 변경",
+
+    "msg_timeout": "서버의 응답이 없어 초기화면으로 이동합니다.",
+    "msg_tx_fail": "전송에 실패하였습니다. 잠시 후 다시 시도해 주세요.",
+    "msg_tx_complete": "전송이 완료되었습니다.",
+    "msg_tx_fail_insufficient_fee": "전송에 실패하였습니다. 수수료를 확인해 주세요.",
+
+    "msg_input_address": "보낼 주소를 입력해 주세요.",
+    "msg_input_amount": "거래 수량을 입력해 주세요.",
+    "msg_tx_amount_over_balance": "전송하려는 수량이 보유 수량보다 많습니다.",
+    "msg_input_fee": "수수료를 입력해 주세요.",
+    "msg_fee_is_too_low": "수수료가 적어 전송할 수 없습니다.",
+
+    "lbl_setting": "설정",
+    "lbl_setting_currency": "통화단위",
+    "lbl_setting_crypto_currency": "암호화폐 설정",
+    "lbl_setting_favorite": "자주 쓰는 주소",
+    "lbl_setting_reset": "초기화",
+
+    "lbl_transaction_detail": "거래 상세 보기",
+    "lbl_transaction_detail_amount": "수량",
+    "lbl_transaction_detail_fee": "수수료",
+    "lbl_transaction_detail_time": "시간",
+    "lbl_transaction_detail_txID": "거래ID",
+
+    "msg_enter_email": "주소를 보낼 이메일 주소를 입력하고 확인 버튼을 눌러주세요.",
+    "placeholder_enter_email": "이메일 주소를 입력하세요.",
+
+    "msg_saved": "저장되었습니다.",
+    "msg_duplicated_address": "이미 저장된 주소입니다.",
+    "msg_send_confirm": "입력하신 내용으로 보내시겠습니까? 보낸 이후 취소할 수 없습니다.",
+
+    "lbl_confirm_complete": "확인 완료",
+    "lbl_confirm_on_process": "확인 중",
+
+    "msg_invalid_address": "유효하지 않은 주소입니다.",
+    "msg_enter_tx_amount": "보낼 수량을 입력해 주세요.",
+    "msg_copyToClipboard": "클립보드로 복사되었습니다.",
+
+    "msg_on_transfer": "전송 처리 중입니다",
+    "msg_transfer_complete": "전송이 완료되었습니다",
+
+    "msg_reset_wallet1": "복구 단어를 기록하셨습니까?",
+    "msg_reset_wallet2": "복구 단어가 없으면 지갑 초기화 이후 복구가 불가능합니다. 다시 한번 복구 단어를 기록했는지 확인하시기 바랍니다.",
+    "msg_reset_wallet3": "정말로 지갑을 초기화 하시겠습니까?",
+    "msg_understand": "네, 초기화 하겠습니다."
+  },
+
+  "modal": {
+    "confirm": "확인",
+    "close": "닫기",
+    "cancel": "취소",
+    "save": "저장",
+    "update": "업데이트",
+    "later": "다음에"
+  }
+}

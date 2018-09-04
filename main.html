@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="lib/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/css/reset.css">
+	<link rel="stylesheet" href="lib/css/common.css">
+	<link rel="stylesheet" href="lib/css/style.css">
+	<link rel="stylesheet" href="lib/css/sub.css">
+	<link rel="stylesheet" href="lib/css/main.css">
+	<link rel="stylesheet" href="lib/css/dialog.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<script type="text/javascript" src="lib/js/third/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="lib/js/constants.js"></script>
+	<script type="text/javascript" src="lib/js/third/bootstrap.js"></script>
+	<script type="text/javascript" src="lib/js/utils/commonUtils.js"></script>
+	<script type="text/javascript" src="lib/js/utils/pathUtils.js"></script>
+	<script type="text/javascript" src="lib/js/third/bitcoinjs.min.js"></script>
+	<script type="text/javascript" src="lib/js/wallet/wallet-loader.js"></script>
+	<script type="text/javascript" src="lib/js/ui/main.js"></script>
+	<script type="text/javascript" src="lib/js/third/jquery-i18next.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/i18nextXHRBackend.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/i8next.min.js"></script>
+	<script type="text/javascript" src="lib/js/third/bs58.bundle.js"></script>
+</head>
+<body class="main">
+<div>
+	<div class="sideBar">
+		<img class="main_logo" src="image/img_main_logo.png" alt="kasse">
+		<div class="btn_home"></div>
+		<ul>
+			<li class="sideBar-item" data-targetId="dashboard_send" data-select="selected" data-i18n="[append]main.lbl_send"><img class="ic_send" src="image/ic_send_off.png "></li>
+			<li class="sideBar-item" data-targetId="dashboard_receive" data-i18n="[append]main.lbl_receive"><img class="ic_receive" src="image/ic_receive_off.png"></li>
+		</ul>
+	</div>
+
+	<div class="main_content">
+		<!-- Header -->
+		<header class="main_header">
+			<div class="my_balance" style="margin-top: 60px">
+				<div class="upper balance_coin">
+					<span class="balance_coin_unit">DAC</span>&nbsp;<span class="balance_amount">&nbsp;</span>
+				</div>
+			</div>
+			<div class="reload"></div>
+			<div class="setting_btn_wrapper">
+				<div id="btn_config"></div>
+				<img src="image/ico_new.png" class="badge-new" style="display: none">
+			</div>
+		</header>
+
+		<!-- Dashboard Container -->
+		<div class="dashboard_container">
+			<div id="dashboard_send" class="dashboard_content" style="position: relative; padding: 0">
+				<div style="padding-top: 20px;padding-left: 23px;">
+					<div class="send_div1">
+						<dl>
+							<dt data-i18n="main.send_address"></dt>
+							<dd>
+								<div class="input_wrapper">
+									<input class="input_send" type="text" id="send_address" data-i18n="[placeholder]main.address_placeholder" style="width: 100%">
+								</div>
+							</dd>
+						</dl>
+
+						<dl class="quan row2" style="margin-top: 32px">
+							<dt data-i18n="main.send_amount"></dt>
+							<dd>
+								<div class="input_wrapper">
+									<div style="float: left; margin-left: 15px">DAC</div>
+									<input type="text" id="txt_inputCoin" value="0" style="width: 250px" autocomplete="off">
+									<div id="bt_max" class="wallet_dark_blue" style="float: right; cursor:pointer;" data-i18n="main.caption_max"></div>
+								</div>
+							</dd>
+						</dl>
+					</div>
+
+					<div class="send_div2" style="padding-left: 48px; padding-right: 25px">
+						<div>
+							<dt data-i18n="main.tx_fee"></dt>
+							<dd id="radio_fee" class="send_fee" style="margin-top: 15px" >
+								<input id="upper" name="send_fee" type="radio" value="10000000">
+								<label for="upper"  style="margin-right: 20px; color: #797979">0.1 DAC</label>
+
+								<input id="middle" name="send_fee" type="radio" value="3000000" checked>
+								<label for="middle"  style="margin-right: 20px; color: #797979">0.03 DAC</label>
+
+								<input id="low" name="send_fee" type="radio" value="1000000">
+								<label for="low"  style="margin-right: 20px; color: #797979">0.01 DAC</label>
+
+								<div>
+									<input id="fee_user" name="send_fee" type="radio" value="0">
+									<label for="fee_user" style="margin-right: 30px; color: #797979; margin-top: 2px;" data-i18n="main.fee_custom"></label>
+
+									<div class="fee_input_wrapper" style="width: 180px;float: right; margin-right: 55px;  visibility: hidden">
+										<div style="float: left; margin-left: 8px; margin-top: 1px; text-align: center">DAC</div>
+										<Input id="input_fee_user" name="" type="text" style="height: 20px;" value="0"  autocomplete="off">
+									</div>
+
+								</div>
+							</dd>
+							<p class="send_fee_alert low-fee-alert">&nbsp;</p>
+						</div>
+						<div>
+							<dl>
+								<dt data-i18n="main.lbl_total_amount"></dt>
+								<dd>
+									<div class="total_amount">
+										<div class="total_amount_elem" style="width: 100px">DAC</div>
+										<div id="totalCoin" class="total_amount_elem">0</div>
+									</div>
+									<div class="total_amount" style="margin-top: 4px; visibility: hidden">
+										<div class="total_amount_elem currency_unit"  style="width: 100px"></div>
+										<p id="totalCash" class="total_amount_elem">0</p>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<button id="id_submit" type="button" data-i18n="main.caption_send"></button>
+					</div>
+				</div>
+			</div>
+			<div id="dashboard_receive" class="dashboard_content" style="display: none">
+				<div class="receive_div1">
+					<div style="text-align: center; height: 100%">
+						<a class="copy">
+							<img class="qr" src="image/ico_qr2.png" alt="qrCode" style="width: 143px; height: 143px; margin-top: 15px">
+						</a>
+					</div>
+				</div>
+
+				<div class="receive_div2">
+					<dl >
+						<dt data-i18n="main.lbl_amount"></dt>
+						<dd>
+							<div class="input_wrapper">
+								<!--<p class="unit">BCH</p>-->
+								<div style="float: left; margin-left: 15px">DAC</div>
+								<input type="text" id="recv_amount" style="width: 450px" value="0" autocomplete="off">
+								<div id="btn_make_qrCode" style="float: right; cursor:pointer; background-color: #002256"></div>
+							</div>
+						</dd>
+					</dl>
+
+					<dl class="row2" style="margin-top: 32px">
+						<dt data-i18n="main.lbl_receive_address"></dt>
+						<dd>
+							<div class="input_wrapper">
+								<input id="recv_address" class="input_send" type="text"  autocomplete="off" style="width: 80%">
+								<img id="copytoclipboard" src="image/btn_copy_address.png" alt="contact" style="float: right; margin-right: 15px; cursor:pointer">
+								<img id="mailTo" src="image/btn_email.png" alt="contact" style="float: right; margin-right: 15px; cursor:pointer">
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<div style="height: 1px; width: 100%; background-color: #0090d0"></div>
+
+		<div class="transaction_list_container">
+			<section>
+				<h4 data-i18n="main.lbl_tx_history"></h4>
+				<div class="transaction_list">
+					<div class="list_label list_row">
+						<div class="list_cell list_date">Date</div>
+						<div class="list_cell list_address">Address</div>
+						<div class="list_cell list_favorite"></div>
+						<div class="list_cell list_amount">Amount</div>
+						<div class="list_cell list_confirm"></div>
+					</div>
+
+					<ul id="trans_list_item"></ul>
+					<div class="no_trans" data-i18n="main.no_tx"></div>
+				</div >
+			</section>
+		</div>
+	</div>
+</div>
+<!-- //main_content -->
+
+<!-- Modal -->
+<div class="modal" id="setting_popup" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header" data-i18n="main.lbl_setting"></div>
+			<div class="modal-body modal-setting-body">
+				<div class="menu-container">
+					<div class="menu-item setting_menu_item" data-name="reset">
+						<div class="menu_label" data-i18n="main.lbl_setting_reset"></div>
+						<div class="ic_menu_next"></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="btn_close_popup" data-dismiss="modal" aria-label="Close" data-i18n="modal.close"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="setting_reset" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header" data-i18n="landing.lbl_reset_wallet"></div>
+			<div class="modal-body modal-setting-body" style="text-align: left;">
+				<p data-i18n="main.msg_reset_wallet1" style="padding-top: 40px; padding-left: 25px; padding-right: 25px"></p>
+				<p data-i18n="main.msg_reset_wallet2" style="padding-left: 25px; padding-right: 25px"></p>
+				<p data-i18n="main.msg_reset_wallet3" style="padding-left: 25px; padding-right: 25px"></p><br><br><br><br>
+				<div style="width: 100%; text-align: center">
+					<label class="checkbox_container" data-i18n="[append]main.msg_understand"><input id="check-understand" type="checkbox" name="reset"></label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div id="btnReset" class="btn-modal-confirm disable" data-i18n="modal.confirm"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="inputEmailDialog" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body">
+				<div style="padding: 15px 25px">
+					<p style="text-align: left" data-i18n="main.msg_enter_email"></p>
+					<div>
+						<input id="input_email" type="text" value=""  style="width: 100%; margin-top: 20px; padding: 0 10px" data-i18n="[placeholder]main.placeholder_enter_email">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div id="sendEmail" class="btn-modal-confirm" data-i18n="modal.confirm"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="trans-detail-view" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header" data-i18n="main.lbl_transaction_detail"></div>
+			<div class="modal-body modal-setting-body">
+				<div class="menu-divider"></div>
+				<div class="display_table detail_row draggable">
+					<div id="detail-label-address" class="table_cell detail_label"></div>
+					<div id="detail-address" class="table_cell detail_content"></div>
+				</div>
+				<div class="menu-divider"></div>
+				<div class="display_table detail_row">
+					<div class="table_cell detail_label" data-i18n="main.lbl_transaction_detail_amount"></div>
+					<div id="detail-amount" class="table_cell detail_content"></div>
+				</div>
+				<div class="menu-divider"></div>
+				<div class="display_table detail_row">
+					<div class="table_cell detail_label" data-i18n="main.lbl_transaction_detail_fee"></div>
+					<div id="detail-fee" class="table_cell detail_content"></div>
+				</div>
+				<div class="menu-divider"></div>
+				<div class="display_table detail_row">
+					<div class="table_cell detail_label" data-i18n="main.lbl_transaction_detail_time"></div>
+					<div id="detail-time" class="table_cell detail_content"></div>
+				</div>
+				<div class="menu-divider"></div>
+				<div class="display_table detail_row">
+					<div class="table_cell detail_label" data-i18n="main.lbl_transaction_detail_txID"></div>
+					<div id="detail-txId" class="table_cell detail_content" style="padding: 10px 40px 10px 20px"></div>
+					<div id="link-coin-explorer" class="table_cell" style="margin-top: 15px; margin-right: 10px"></div>
+				</div>
+				<div class="menu-divider"></div>
+			</div>
+			<div class="modal-footer">
+				<div class="btn_close_popup" data-dismiss="modal" aria-label="Close" data-i18n="modal.close"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="txProgressDialog" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body" style="height: 150px">
+				<div style="width: 100%; height: 100%; padding: 0 15px;">
+					<img src="image/loading_gif.gif" alt="" style="margin-right: 15px; float: left;margin-top: 45px"><!--class="vertical_center refresh-animate"-->
+					<div id ="sendingProgressMsg" class="msg vertical_center" style="float: left; text-align: left; width: 85%;" data-i18n="main.msg_on_transfer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmDialog" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body modal-confirm-body">
+				<p id="lblMsg"></p>
+			</div>
+			<div class="modal-footer">
+				<div id="btnConfirmYes" class="btn-modal-confirm" data-i18n="modal.confirm"></div>
+				<div id="btnConfirmNo" class="btn_close_popup" data-dismiss="modal" aria-label="Close" data-i18n="modal.cancel"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- modal -->
+<div class="modal fade" id="alertDialog" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body modal-confirm-body">
+				<p id="lblAlert"></p>
+			</div>
+			<div class="modal-footer">
+				<div type="button" id="btnConfirmOK" class="btn-modal-confirm" data-i18n="modal.confirm"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+    $(document).ready(function() {
+        var lng;
+        if (navigator.language === 'ko' || navigator.language === 'ko-KR') {
+            lng = 'ko';
+        }
+        else {
+            lng = 'en';
+        }
+
+        i18next
+            .use(i18nextXHRBackend)
+            .init({
+				lng: lng,
+                backend: {
+                    loadPath: '/locales/{{lng}}/{{ns}}.json',
+                    crossDomain: false
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $);
+                $('.main').localize();
+            });
+
+        var resetCheckBox = $('input[name="reset"]');
+        $(resetCheckBox).each(function(){
+            $(this).wrap( "<span class='custom-checkbox'></span>" );
+            if($(this).is(':checked')){
+                $(this).parent().addClass("selected");
+            }
+        });
+
+        $(resetCheckBox).click(function(){
+            $(this).parent().toggleClass("selected");
+			if ($(this).parent().hasClass('selected')) {
+			    $('#btnReset').removeClass('disable');
+			}
+			else {
+                $('#btnReset').addClass('disable');
+			}
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/reset.css">
+    <link rel="stylesheet" href="lib/css/common.css">
+    <link rel="stylesheet" href="lib/css/style.css">
+    <link rel="stylesheet" href="lib/css/sub.css">
+    <link rel="stylesheet" href="lib/css/dialog.css">
+    <link rel="stylesheet" href="lib/css/landing.css">
+    <script type="text/javascript" src="lib/js/third/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/js/constants.js"></script>
+    <script type="text/javascript" src ="lib/js/ui/landing.js"></script>
+    <script type="text/javascript" src="lib/js/third/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/js/third/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="lib/js/third/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="lib/js/third/i8next.min.js"></script>
+</head>
+<body class="landing-1">
+<div id="landing">
+    <img id="logo" src="image/ic_home_logo.png" alt="kasse">
+
+    <div id="create-wallet-container" style="display: none">
+        <div id="btn-create-wallet" class="btn-create" data-i18n="landing.caption_create_wallet"></div>
+        <div id="btn-restore-wallet" class="btn-restore" data-i18n="landing.caption_restore_wallet"></div>
+    </div>
+
+    <div id="select-coin-container" style="display: none">
+        <div id="btn-hdac">
+            <div style="width: 100%; height: 100%; background:url('image/ic_hdac_logo.png') no-repeat center center"></div>
+        </div>
+    </div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="confirmDialog" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body modal-confirm-body">
+                <p id="lblMsg"></p>
+            </div>
+            <div class="modal-footer">
+                <div id="btnConfirmYes" class="btn-modal-confirm" data-i18n="modal.confirm"></div>
+                <div id="btnConfirmNo" class="btn_close_popup" data-dismiss="modal" aria-label="Close" data-i18n="modal.cancel"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dialog-create-wallet-info" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" data-i18n="landing.lbl_create_wallet"></div>
+            <div class="modal-body modal-create-wallet-body">
+                <p data-i18n="landing.msg_create_wallet_notice_0"></p>
+                <p class="highlight" data-i18n="landing.msg_create_wallet_notice_1"></p><br>
+                <p data-i18n="landing.msg_create_wallet_notice_2"></p><br><br>
+                <div style="width: 100%; text-align: center">
+                    <label class="checkbox_container" data-i18n="[append]landing.msg_understand"><input id="check-understand" type="checkbox" name="confirm"></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="btnNext" class="btn-modal-confirm disable" data-i18n="landing.caption_next"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dialog-create-seed" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" data-i18n="landing.lbl_create_wallet"></div>
+            <div class="modal-body modal-create-wallet-body">
+                <p data-i18n="landing.msg_phrase"></p>
+                <div id="backup-phrase" class="backup-phrase-container" style="word-spacing: 10px;"></div>
+            </div>
+            <div class="modal-footer">
+                <div id="btnRecord" class="btn-modal-understand" data-i18n="landing.caption_record"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dialog-input-seed" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='dialog-input-seed-header' class="modal-header" data-i18n="landing.lbl_create_wallet"></div>
+            <div class="modal-body modal-create-wallet-body">
+                <p id='' data-i18n="landing.msg_input_backup_phrase"></p>
+                <textarea id="backup-phrase-textArea" class="backup-phrase-container no-scrollbar" rows="3" cols="50" data-i18n="[placeholder]landing.placeholder_input_backup_phrase"></textarea>
+            </div>
+            <div class="modal-footer">
+                <div id="btnCreateWallet" class="btn-modal-confirm disable" data-i18n="landing.caption_confirm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var lng;
+        if (navigator.language === 'ko' || navigator.language === 'ko-KR') {
+            lng = 'ko';
+        }
+        else {
+            lng = 'en';
+        }
+
+        i18next
+            .use(i18nextXHRBackend)
+            .init({
+                lng: lng,
+                backend: {
+                    loadPath: '/locales/{{lng}}/{{ns}}.json',
+                    crossDomain: false
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $);
+                $('.landing-1').localize();
+            });
+
+        var checkBox = $('input[name="confirm"]');
+        $(checkBox).each(function(){
+            $(this).wrap( "<span class='custom-checkbox'></span>" );
+            if($(this).is(':checked')){
+                $(this).parent().addClass("selected");
+            }
+        });
+
+        $(checkBox).click(function(){
+            $(this).parent().toggleClass("selected");
+
+            if (!$(this).parent().hasClass('selected')) {
+                $('#btnNext').addClass('disable');
+            }
+            else {
+                $('#btnNext').removeClass('disable');
+            }
+        });
+    })
+</script>
+</body>
+</html>

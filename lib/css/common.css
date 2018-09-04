@@ -1,0 +1,101 @@
+
+@charset "utf-8";
+
+/*body{background:#f4f4f4;}*/
+/*header{padding:0 15px;}*/
+.bold{font-weight: bold;}
+.upper{text-transform: uppercase;}
+.none{display:none;}
+.both{clear:both;}
+.container{padding: 25px 5px;background:#ffffff;}
+.cover{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;opacity:0.5;z-index:1000;}
+
+.wallet_dark_blue {background-color:#002256}
+
+.hdac_color {color:#0090d0}
+.hdac_background{background-color:#0090d0;}
+
+.display_table {
+    width: 100%;
+    display: table;
+}
+
+.table_cell {
+    display: table-cell;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.vertical_center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+input[type='radio'] + label::before {
+    content: ' ';
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+    margin: -5px 10px 0 0;
+    background: url('../../image/btn_radio_off.png');
+}
+input[type='radio']:checked + label::before {
+    background: url('../../image/btn_radio_checked.png');
+    background-position: 17px 0;
+}
+
+.custom-checkbox{
+    width: 15px;
+    height: 15px;
+    margin-right: 17px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    top: 3px;
+    /*background-color: #ccc;*/
+    background: url('../../image/img_check_off.png') no-repeat;
+}
+
+.custom-checkbox.selected{
+    background: url('../../image/img_check_on.png') no-repeat;
+}
+
+.custom-checkbox input[type="checkbox"]{
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    /* CSS hacks for older browsers */
+    _noFocusLine: expression(this.hideFocus=true);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.draggable *{
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
